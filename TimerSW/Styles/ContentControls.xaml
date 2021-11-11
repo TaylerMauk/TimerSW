@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="StyleStartPauseButtonToggle" TargetType="{x:Type ContentControl}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsTicking}" Value="False">
+                <Setter Property="Template" Value="{DynamicResource ControlTemplateStartButton}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=IsTicking}" Value="True">
+                <Setter Property="Template" Value="{DynamicResource ControlTemplatePauseButton}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="StyleTimerFaceConfigureToggle" TargetType="{x:Type ContentControl}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsBeingConfigured}" Value="False">
+                <Setter Property="Template" Value="{DynamicResource ControlTemplateTimerFace}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=IsBeingConfigured}" Value="True">
+                <Setter Property="Template" Value="{DynamicResource ControlTemplateConfigureTimer}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

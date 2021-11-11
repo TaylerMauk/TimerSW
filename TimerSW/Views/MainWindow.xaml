@@ -1,0 +1,61 @@
+﻿<Window x:Class="TimerSW.Views.MainWindow"
+        x:Name="windowMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimerSW"
+        xmlns:viewmodels="clr-namespace:TimerSW.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel, IsDesignTimeCreatable=True}"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Topmost="True"
+        Title="TimerSW (Beta)" Height="50" Width="250"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="{Binding ElementName=mainContent, Path=ActualHeight}"
+        MinWidth="{Binding ElementName=windowMain, Mode=OneTime, Path=Width}"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        SourceInitialized="Window_SourceInitialized">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" CornerRadius="10" GlassFrameThickness="0" NonClientFrameEdges="None" ResizeBorderThickness="8"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid Style="{DynamicResource StyleWindowMainContents}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Width="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Row="0" Style="{DynamicResource StyleStartPauseButtonToggle}" />
+            <Button Grid.Row="1" Style="{DynamicResource StyleResetButton}" Command="{Binding Path=ResetTimerCommand}">
+                <Path Data="m 394.84133,106.70312 c -0.5152,-0.51519 -0.52917,-0.88194 -0.52917,-13.89063 0,-13.00868 0.014,-13.37542
+                        0.52917,-13.89062 0.5152,-0.5152 0.88194,-0.52917 13.89062,-0.52917 13.00869,0 13.37544,0.014 13.89063,0.52917
+                        0.51519,0.5152 0.52917,0.88194 0.52917,13.89062 0,13.00869 -0.014,13.37544 -0.52917,13.89063 -0.51519,0.51519
+                        -0.88194,0.52917 -13.89063,0.52917 -13.00868,0 -13.37542,-0.014 -13.89062,-0.52917 z" />
+            </Button>
+            <Button Grid.Row="2" Style="{DynamicResource StyleConfigureButton}" Command="{Binding Path=ConfigureTimerCommand}">
+                <Path Data="m 0,0 c -7.94747,-1.33797 -13.96927,-7.94435 -14.64682,-16.06868 -0.31406,-3.76586 0.96186,-8.06148
+                        3.20906,-10.80389 0.49714,-0.60669 9.9221,-8.64756 20.94437,-17.868601 11.02227,-9.22105 20.28271,-17.04148 20.57875,-17.37875
+                        1.41344,-1.61029 1.4809,-3.35432 0.37604,-9.72141 -1.06941,-6.162784 -1.15972,-10.921969 -0.27583,-14.536209 1.96229,-8.023822
+                        8.566468,-15.908795 16.917492,-20.19842 6.51739,-3.347759 15.38992,-5.012262 17.7151,-3.323387 1.17518,0.853587 2.00651,2.776431
+                        1.78716,4.133682 -0.17004,1.052222 -0.73966,1.690856 -8.09429,9.075057 -4.35126,4.368749 -7.91138,8.119191 -7.91138,8.334316
+                        0,0.215127 1.31017,4.321698 2.91149,9.125717 l 2.91149,8.734584 9.02462,3.00383 9.02463,3.00383 7.97378,-7.94856 c
+                        8.616199,-8.588943 8.588029,-8.568036 10.947949,-8.125314 1.39661,0.262007 2.89134,1.881645 3.11187,3.371929 0.31601,2.135495
+                        -0.56346,7.399345 -1.88536,11.284325 -3.46816,10.1927 -12.338739,18.99702 -21.663179,21.50135 -3.43024,0.921291 -8.75986,0.830651
+                        -14.69503,-0.2499 -6.25117,-1.13809 -8.49767,-1.05326 -10.08219,0.38072 -0.29306,0.26521 -8.161727,9.391301 -17.485942,20.280211
+                        -9.32421,10.88891 -17.4407,20.22291 -18.03664,20.74223 -3.04181,2.65071 -8.26108,3.99142 -12.65714,3.25134 z" />
+            </Button>
+        </Grid>
+
+        <StackPanel x:Name="mainContent" Grid.Column="1" VerticalAlignment="Center">
+            <ContentControl Style="{DynamicResource StyleTimerFaceConfigureToggle}" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="ColorDarkMain">#323232</Color>
+    <Color x:Key="ColorLightMain">#E6E7FC</Color>
+
+    <Color x:Key="ColorDarkDisabled">#232323</Color>
+    <Color x:Key="ColorLightDisabled">#CDCDCD</Color>
+
+    <Color x:Key="ColorDarkHover">#898989</Color>
+    <Color x:Key="ColorLightHover">#ABABAB</Color>
+
+    <Color x:Key="ColorDarkPressed">#686868</Color>
+    <Color x:Key="ColorLightPressed">#ABAB88</Color>
+
+    <Color x:Key="ColorSafe">#73BD62</Color>
+    <Color x:Key="ColorDanger">#BD6262</Color>
+    <Color x:Key="ColorPause">#62ACBD</Color>
+    <Color x:Key="ColorWarning">#E8E874</Color>
+    <Color x:Key="ColorConfigure">#CDCDCD</Color>
+
+    <SolidColorBrush x:Key="BrushWindowBackground" Color="{DynamicResource ColorDarkMain}" />
+    <SolidColorBrush x:Key="BrushTextMain" Color="{DynamicResource ColorLightMain}" />
+
+    <SolidColorBrush x:Key="BrushDarkHover" Color="{DynamicResource ColorDarkHover}" />
+    <SolidColorBrush x:Key="BrushLightHover" Color="{DynamicResource ColorLightHover}" />
+
+    <SolidColorBrush x:Key="BrushDarkPressed" Color="{DynamicResource ColorDarkPressed}" />
+    <SolidColorBrush x:Key="BrushLightPressed" Color="{DynamicResource ColorLightPressed}" />
+
+    <SolidColorBrush x:Key="BrushDarkDisabled" Color="{DynamicResource ColorDarkDisabled}" />
+    <SolidColorBrush x:Key="BrushLightDisabled" Color="{DynamicResource ColorLightDisabled}" />
+
+    <SolidColorBrush x:Key="BrushStart" Color="{DynamicResource ColorSafe}" />
+    <SolidColorBrush x:Key="BrushPause" Color="{DynamicResource ColorPause}" />
+    <SolidColorBrush x:Key="BrushReset" Color="{DynamicResource ColorDanger}" />
+    <SolidColorBrush x:Key="BrushConfigure" Color="{DynamicResource ColorConfigure}" />
+    <SolidColorBrush x:Key="BrushTimerIndicator" Color="{DynamicResource ColorSafe}" />
+
+    <SolidColorBrush x:Key="BrushSafe" Color="{DynamicResource ColorSafe}" />
+    <SolidColorBrush x:Key="BrushWarning" Color="{DynamicResource ColorWarning}" />
+    <SolidColorBrush x:Key="BrushDanger" Color="{DynamicResource ColorDanger}" />
+
+</ResourceDictionary>

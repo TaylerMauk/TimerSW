@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="StyleTextBlockBase" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource BrushTextMain}" />
+    </Style>
+
+    <Style x:Key="StyleTextBoxBase" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{DynamicResource BrushTextMain}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CaretBrush" Value="{DynamicResource BrushTextMain}" />
+    </Style>
+
+    <Style x:Key="StyleTimerFace" TargetType="{x:Type Viewbox}">
+        <Style.Resources>
+            <Style BasedOn="{StaticResource StyleTextBlockBase}" TargetType="{x:Type TextBlock}" />
+        </Style.Resources>
+    </Style>
+    
+</ResourceDictionary>

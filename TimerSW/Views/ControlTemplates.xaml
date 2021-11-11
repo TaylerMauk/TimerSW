@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TimerSW">
+
+    <ControlTemplate x:Key="ControlTemplateTimerFace">
+        <StackPanel>
+            <Viewbox Style="{DynamicResource StyleTimerFace}"  Margin="10 0">
+                <TextBlock Grid.Column="1" Text="{Binding Path=TimeString}" HorizontalAlignment="Center" />
+            </Viewbox>
+
+            <Border Style="{DynamicResource StyleTimerIndicator}" />
+        </StackPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ControlTemplateConfigureTimer">
+        <Grid Margin="0" Style="{DynamicResource StyleConfigureGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0 5">
+                <TextBlock Text="Type:" Margin="10 0" />
+                <RadioButton Content="Stopwatch" Margin="0 0 10 0" Style="{DynamicResource StyleBaseTypeRadioButton}" IsChecked="{Binding Path=Type, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static local:TimerType.Up}}" />
+                <RadioButton Content="Timer" Style="{DynamicResource StyleBaseTypeRadioButton}" IsChecked="{Binding Path=Type, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static local:TimerType.Down}}" />
+            </StackPanel>
+
+            <Grid Grid.Row="1" Margin="5" Style="{DynamicResource StyleTimeSelectorGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0">
+                    <TextBox Text="{Binding Path=StartingHours, Mode=TwoWay}" Margin="5 0" />
+                    <TextBlock Text="Hours" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="1 0">
+                    <TextBox Text="{Binding Path=StartingMinutes, Mode=TwoWay}" Margin="5 0" />
+                    <TextBlock Text="Minutes" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0">
+                    <TextBox Text="{Binding Path=StartingSeconds, Mode=TwoWay}" Margin="5 0" />
+                    <TextBlock Text="Seconds" />
+                </StackPanel>
+            </Grid>
+
+            <Button Grid.Column="2" Grid.Row="2" Content="Save" Style="{DynamicResource StyleSaveSettingsButton}"  Command="{Binding Path=SaveTimerSettingsCommand}" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ControlTemplateStartButton">
+        <Button Grid.Row="0" Style="{DynamicResource StyleStartButton}" Command="{Binding Path=StartTimerCommand}">
+            <Path Data="m 0,0 c -1.33148,-0.65907 -2.26291,-1.79387 -2.68676,-3.27338 -0.22217,-0.7755 -0.2821,-9.30746
+                -0.22423,-31.92572 l 0.079,-30.867377 0.79729,-1.1472 c 1.41178,-2.03138 4.13789,-2.8808 6.31976,-1.96916 0.9762,0.40789
+                41.2976,29.588777 42.72787,30.922477 2.22252,2.07244 2.15708,5.51326 -0.14517,7.63357 -1.14758,1.05689 -41.35693,30.18428
+                -42.40832,30.7203 -1.24449,0.63448 -3.06584,0.59629 -4.4594,-0.0935 z" />
+        </Button>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ControlTemplatePauseButton">
+        <Button Grid.Row="0" Style="{DynamicResource StylePauseButton}" Command="{Binding Path=PauseTimerCommand}">
+            <Path Data="m 0,0 c -1.80068,-1.09793 -1.6669,2.9522 -1.66259,-50.33455 0.003,-38.05194 0.0737,-48.3714
+                0.33458,-48.88697 0.18188,-0.35943 0.73923,-0.92883 1.23857,-1.26534 l 0.90788,-0.61182 10.52665,0.0747 10.52664,0.0747
+                0.86474,0.86497 0.86474,0.86497 0.0682,48.63603 0.0682,48.63604 -0.60534,0.89826 c -1.05866,1.57095 -0.96898,1.55937
+                -12.09883,1.56255 -9.6402,0.003 -10.23189,-0.0248 -11.03351,-0.51357 z m 42.33333,0 c -1.80068,-1.09793 -1.6669,2.9522
+                -1.66259,-50.33455 0.003,-38.05194 0.0737,-48.3714 0.33458,-48.88697 0.18188,-0.35943 0.73923,-0.92883 1.23857,-1.26534
+                l 0.90788,-0.61182 10.52665,0.0747 10.52664,0.0747 0.86474,0.86497 0.86474,0.86497 0.0683,48.55504 c 0.0754,53.68344
+                0.20582,49.56171 -1.60245,50.66427 -0.80139,0.48864 -1.39615,0.51648 -11.0335,0.51648 -9.63736,0 -10.23212,-0.0278
+                -11.03351,-0.51648 z" />
+        </Button>
+    </ControlTemplate>
+
+</ResourceDictionary>

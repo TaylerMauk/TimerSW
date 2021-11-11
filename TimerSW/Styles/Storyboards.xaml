@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Storyboard x:Key="StoryboardBackgroundColorToSafe">
+        <ColorAnimation Duration="0:0:1" To="{StaticResource ColorSafe}" FillBehavior="HoldEnd" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" />
+    </Storyboard>
+
+    <Storyboard x:Key="StoryboardBackgroundColorToWarning">
+        <ColorAnimation Duration="0:0:1" To="{StaticResource ColorWarning}" FillBehavior="HoldEnd" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" />
+    </Storyboard>
+
+    <Storyboard x:Key="StoryboardBackgroundColorToDanger">
+        <ColorAnimation Duration="0:0:1" To="{StaticResource ColorDanger}" FillBehavior="HoldEnd" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" />
+    </Storyboard>
+
+</ResourceDictionary>
