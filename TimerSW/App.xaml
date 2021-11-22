@@ -36,7 +36,7 @@
                             <BeginStoryboard Storyboard="{DynamicResource StoryboardBackgroundColorToWarning}" x:Name="StoryboardBackgroundColorToWarning" />
                         </DataTrigger.EnterActions>
                         <DataTrigger.ExitActions>
-                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToWarning"/>
+                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToWarning" />
                         </DataTrigger.ExitActions>
                     </DataTrigger>
                     <DataTrigger Binding="{Binding Path=Zone}" Value="Danger">
@@ -44,7 +44,7 @@
                             <BeginStoryboard Storyboard="{DynamicResource StoryboardBackgroundColorToDanger}" x:Name="StoryboardBackgroundColorToDanger" />
                         </DataTrigger.EnterActions>
                         <DataTrigger.ExitActions>
-                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToDanger"/>
+                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToDanger" />
                         </DataTrigger.ExitActions>
                     </DataTrigger>
                     <DataTrigger Binding="{Binding Path=Zone}" Value="Safe">
@@ -52,7 +52,7 @@
                             <BeginStoryboard Storyboard="{DynamicResource StoryboardBackgroundColorToSafe}" x:Name="StoryboardBackgroundColorToSafe" />
                         </DataTrigger.EnterActions>
                         <DataTrigger.ExitActions>
-                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToSafe"/>
+                            <RemoveStoryboard BeginStoryboardName="StoryboardBackgroundColorToSafe" />
                         </DataTrigger.ExitActions>
                     </DataTrigger>
                 </Style.Triggers>
@@ -68,6 +68,19 @@
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Path=Type}" Value="Up">
                         <Setter Property="Visibility" Value="Hidden" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="StyleAudioPlayer" TargetType="{x:Type MediaElement}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsExpired}" Value="True">
+                        <DataTrigger.EnterActions>
+                            <BeginStoryboard Storyboard="{StaticResource StoryboardPlayExpiredAudio}" x:Name="StoryboardPlayExpiredAudio" />
+                        </DataTrigger.EnterActions>
+                        <DataTrigger.ExitActions>
+                            <RemoveStoryboard BeginStoryboardName="StoryboardPlayExpiredAudio" />
+                        </DataTrigger.ExitActions>
                     </DataTrigger>
                 </Style.Triggers>
             </Style>

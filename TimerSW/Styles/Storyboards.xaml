@@ -13,4 +13,8 @@
         <ColorAnimation Duration="0:0:1" To="{StaticResource ColorDanger}" FillBehavior="HoldEnd" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" />
     </Storyboard>
 
+    <Storyboard x:Key="StoryboardPlayExpiredAudio">
+        <MediaTimeline Source="Resources\expired.wav" RepeatBehavior="Forever" />
+    </Storyboard>
+
 </ResourceDictionary>

@@ -35,7 +35,7 @@
 
             <ContentControl Grid.Row="0" Style="{DynamicResource StyleStartPauseButtonToggle}" />
             <Button Grid.Row="1" Style="{DynamicResource StyleResetButton}" Command="{Binding Path=ResetTimerCommand}">
-                <Path Data="m 394.84133,106.70312 c -0.5152,-0.51519 -0.52917,-0.88194 -0.52917,-13.89063 0,-13.00868 0.014,-13.37542
+                <Path Data="m 0,0 c -0.5152,-0.51519 -0.52917,-0.88194 -0.52917,-13.89063 0,-13.00868 0.014,-13.37542
                         0.52917,-13.89062 0.5152,-0.5152 0.88194,-0.52917 13.89062,-0.52917 13.00869,0 13.37544,0.014 13.89063,0.52917
                         0.51519,0.5152 0.52917,0.88194 0.52917,13.89062 0,13.00869 -0.014,13.37544 -0.52917,13.89063 -0.51519,0.51519
                         -0.88194,0.52917 -13.89063,0.52917 -13.00868,0 -13.37542,-0.014 -13.89062,-0.52917 z" />
@@ -57,5 +57,7 @@
         <StackPanel x:Name="mainContent" Grid.Column="1" VerticalAlignment="Center">
             <ContentControl Style="{DynamicResource StyleTimerFaceConfigureToggle}" />
         </StackPanel>
+
+        <MediaElement x:Name="mainAudioPlayer" Style="{DynamicResource StyleAudioPlayer}" />
     </Grid>
 </Window>
