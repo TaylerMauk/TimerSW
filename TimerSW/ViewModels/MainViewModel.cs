@@ -93,6 +93,17 @@ namespace TimerSW.ViewModels
             }
         }
 
+        private double m_volume;
+        public double Volume
+        {
+            get => m_volume;
+            set
+            {
+                m_volume = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string m_timeString;
         public string TimeString
         {
@@ -168,6 +179,7 @@ namespace TimerSW.ViewModels
             StartingSeconds = m_timerAgent.Settings.StartingSeconds;
             StartingMinutes = m_timerAgent.Settings.StartingMinutes;
             StartingHours = m_timerAgent.Settings.StartingHours;
+            Volume = m_timerAgent.Settings.Volume;
 
             SyncTimerState();
         }
@@ -234,6 +246,7 @@ namespace TimerSW.ViewModels
 
             m_timerAgent = new TimerAgent(m_type, m_startingSeconds, m_startingMinutes, m_startingHours);
             m_timerAgent.Tick += (sender, e) => SyncTimerState();
+            m_timerAgent.Volume = m_volume;
             SyncTimerInitState();
 
             m_timerAgent.WriteSettingsToFile();

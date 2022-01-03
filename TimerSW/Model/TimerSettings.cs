@@ -8,6 +8,7 @@
         public int StartingMinutes { get; set; }
         public int StartingHours { get; set; }
         public int WarningThreshold { get; set; } = -1;
+        public double Volume { get; set; } = 0.5;
 
         public TimerSettings(TimerType type, int startingSeconds, int startingMinutes, int startingHours)
         {

@@ -8,6 +8,8 @@ namespace TimerSW.Model
     {
         public readonly string SettingsFilePath;
 
+        public double Volume { get; set; }
+
         public int TotalSeconds { get; private set; }
         public int Seconds { get; private set; }
         public int Minutes { get; private set; }
@@ -32,6 +34,7 @@ namespace TimerSW.Model
                 "config.json"
             );
 
+            Volume = Settings.Volume;
             m_timer = new System.Timers.Timer(1000);
             m_timer.Elapsed += (sender, e) => UpdateTimeFields();
             Reset();
@@ -59,6 +62,8 @@ namespace TimerSW.Model
 
         public async void WriteSettingsToFile()
         {
+            Settings.Volume = Volume;
+
             if (!File.Exists(SettingsFilePath))
             {
                 Directory.CreateDirectory(

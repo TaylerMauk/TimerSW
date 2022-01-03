@@ -10,6 +10,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CaretBrush" Value="{DynamicResource BrushTextMain}" />
+        <Setter Property="Padding" Value="1" />
     </Style>
 
     <Style x:Key="StyleTimerFace" TargetType="{x:Type Viewbox}">

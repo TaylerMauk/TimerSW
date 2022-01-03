@@ -74,13 +74,7 @@
     </Style>
 
     <Style x:Key="StyleSaveSettingsButton" BasedOn="{StaticResource StyleBaseButton}" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="25" />
-    </Style>
-
-    <Style x:Key="StyleBaseTypeRadioButton" TargetType="{x:Type RadioButton}">
-        <Setter Property="Foreground" Value="{DynamicResource BrushTextMain}" />
-        <Setter Property="GroupName" Value="TimerType" />
-        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="20" />
     </Style>
 
 </ResourceDictionary>

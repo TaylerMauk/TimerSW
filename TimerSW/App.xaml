@@ -62,6 +62,7 @@
                 <Style.Resources>
                     <Style BasedOn="{StaticResource StyleTextBlockBase}" TargetType="{x:Type TextBlock}" />
                 </Style.Resources>
+                <Setter Property="Margin" Value="5" />
             </Style>
 
             <Style x:Key="StyleTimeSelectorGrid" TargetType="{x:Type Grid}">
@@ -83,6 +84,7 @@
                         </DataTrigger.ExitActions>
                     </DataTrigger>
                 </Style.Triggers>
+                <Setter Property="Volume" Value="{Binding Path=Volume, Mode=OneWay}" />
             </Style>
 
         </ResourceDictionary>
