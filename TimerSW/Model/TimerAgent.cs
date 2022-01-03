@@ -6,6 +6,8 @@ namespace TimerSW.Model
 {
     class TimerAgent
     {
+        public readonly string SettingsFilePath;
+
         public int TotalSeconds { get; private set; }
         public int Seconds { get; private set; }
         public int Minutes { get; private set; }
@@ -24,6 +26,11 @@ namespace TimerSW.Model
         public TimerAgent(TimerType type, int startingSeconds, int startingMinutes, int startingHours)
         {
             Settings = new TimerSettings(type, startingSeconds, startingMinutes, startingHours);
+            SettingsFilePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                "TimerSW",
+                "config.json"
+            );
 
             m_timer = new System.Timers.Timer(1000);
             m_timer.Elapsed += (sender, e) => UpdateTimeFields();
@@ -40,10 +47,10 @@ namespace TimerSW.Model
 
         public void LoadSettingsFromFile()
         {
-            if (File.Exists("config.json"))
+            if (File.Exists(SettingsFilePath))
             {
                 Settings = JsonSerializer.Deserialize<TimerSettings>(
-                    File.ReadAllText("config.json")
+                    File.ReadAllText(SettingsFilePath)
                 );
 
                 Reset();
@@ -52,7 +59,14 @@ namespace TimerSW.Model
 
         public async void WriteSettingsToFile()
         {
-            using (FileStream f = File.Create("config.json"))
+            if (!File.Exists(SettingsFilePath))
+            {
+                Directory.CreateDirectory(
+                    Path.GetDirectoryName(SettingsFilePath)
+                );
+            }
+
+            using (FileStream f = File.Create(SettingsFilePath))
             {
                 await JsonSerializer.SerializeAsync(f, Settings);
             }
