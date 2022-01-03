@@ -12,8 +12,8 @@ namespace TimerSW.ViewModels
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        private Action m_action;
-        private Func<bool> m_canExecuteAction;
+        private readonly Action m_action;
+        private readonly Func<bool> m_canExecuteAction;
 
         public RelayCommand(Action action, Func<bool> canExecuteAction)
         {
