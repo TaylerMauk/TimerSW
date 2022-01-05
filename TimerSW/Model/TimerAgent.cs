@@ -115,8 +115,7 @@ namespace TimerSW.Model
 
         protected virtual void OnTick(EventArgs e)
         {
-            EventHandler eventHandler = Tick;
-            eventHandler?.Invoke(this, e);
+            Tick?.Invoke(this, e);
         }
 
         private void UpdateTimeFields()
