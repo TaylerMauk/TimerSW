@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Styles/Text.xaml" />
                 <ResourceDictionary Source="Styles/Storyboards.xaml" />
                 <ResourceDictionary Source="Styles/Buttons.xaml" />
+                <ResourceDictionary Source="Styles/Sliders.xaml" />
                 <ResourceDictionary Source="Views/ControlTemplates.xaml" />
                 <ResourceDictionary Source="Styles/ContentControls.xaml" />
             </ResourceDictionary.MergedDictionaries>
