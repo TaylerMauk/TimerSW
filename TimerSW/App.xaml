@@ -17,11 +17,12 @@
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="StyleWindowMainContents" TargetType="{x:Type Grid}">
-                <Setter Property="Background" Value="{DynamicResource BrushWindowBackground}" />
                 <Style.Resources>
                     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource StyleTextBlockBase}" />
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource StyleTextBoxBase}" />
                 </Style.Resources>
+                
+                <Setter Property="Background" Value="{DynamicResource BrushWindowBackground}" />
             </Style>
 
             <Style x:Key="StyleTimerIndicator" TargetType="{x:Type Border}">
@@ -30,6 +31,7 @@
                 <Setter Property="Height" Value="10" />
                 <Setter Property="Margin" Value="10 0" />
                 <Setter Property="Background" Value="{DynamicResource BrushTimerIndicator}" />
+
                 <!-- Animations do not work properly if starting color is same as 1st DataTrigger color or starting color is Transparent -->
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Path=Zone}" Value="Warning">
@@ -63,10 +65,11 @@
                 <Style.Resources>
                     <Style BasedOn="{StaticResource StyleTextBlockBase}" TargetType="{x:Type TextBlock}" />
                 </Style.Resources>
+
                 <Setter Property="Margin" Value="5" />
             </Style>
 
-            <Style x:Key="StyleTimeSelectorGrid" TargetType="{x:Type Grid}">
+            <Style x:Key="StyleTimerSettingsGrid" TargetType="{x:Type Grid}">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Path=Type}" Value="Up">
                         <Setter Property="Visibility" Value="Hidden" />
@@ -85,6 +88,7 @@
                         </DataTrigger.ExitActions>
                     </DataTrigger>
                 </Style.Triggers>
+
                 <Setter Property="Volume" Value="{Binding Path=Volume, Mode=OneWay}" />
             </Style>
 
@@ -106,7 +110,7 @@
                                             <Setter TargetName="border" Property="Background" Value="{DynamicResource BrushWindowBackground}"/>
                                         </Trigger>
                                         <Trigger Property="IsEnabled" Value="False">
-                                            <Setter Property="Foreground" Value="{DynamicResource BrushWindowBackground}"/>
+                                            <Setter Property="Foreground" Value="{DynamicResource BrushWindowBackground}" />
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>

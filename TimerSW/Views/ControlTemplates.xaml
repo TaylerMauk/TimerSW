@@ -39,7 +39,7 @@
                     </ComboBox>
                 </Grid>
 
-                <Grid Grid.Row="1" Margin="0 5" Style="{DynamicResource StyleTimeSelectorGrid}" HorizontalAlignment="Center">
+                <Grid Grid.Row="1" Margin="0 5" Style="{DynamicResource StyleTimerSettingsGrid}" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
@@ -65,7 +65,7 @@
                 <Button Grid.Column="2" Grid.Row="2" Content="Save" Style="{DynamicResource StyleSaveSettingsButton}" Command="{Binding Path=SaveTimerSettingsCommand}" />
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Style="{DynamicResource StyleTimerSettingsGrid}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="*" />
