@@ -17,4 +17,12 @@
         <MediaTimeline Source="Resources\expired.wav" RepeatBehavior="Forever" />
     </Storyboard>
 
+    <Storyboard x:Key="StoryboardShowControlButtons">
+        <DoubleAnimation Duration="0:0:0.15" To="32" FillBehavior="HoldEnd" Storyboard.TargetProperty="Width" />
+    </Storyboard>
+
+    <Storyboard x:Key="StoryboardHideControlButtons">
+        <DoubleAnimation Duration="0:0:0.3" To="0" FillBehavior="HoldEnd" Storyboard.TargetProperty="Width" />
+    </Storyboard>
+
 </ResourceDictionary>
