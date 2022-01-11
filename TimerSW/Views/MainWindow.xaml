@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Topmost="True"
-        Title="TimerSW (Beta)" Height="50" Width="250"
+        Title="TimerSW" Height="50" Width="250"
         WindowStartupLocation="CenterScreen"
         MinHeight="{Binding ElementName=mainContent, Path=ActualHeight}"
         MinWidth="{Binding ElementName=windowMain, Mode=OneTime, Path=Width}"
