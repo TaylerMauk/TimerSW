@@ -15,6 +15,12 @@
         MinWidth="{Binding ElementName=windowMain, Mode=OneTime, Path=Width}"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         SourceInitialized="Window_SourceInitialized">
+    
+    <Window.ContextMenu>
+        <ContextMenu Style="{DynamicResource StyleMainContextMenu}">
+            <MenuItem Header="Exit" Click="MenuItemExit_Click" />
+        </ContextMenu>
+    </Window.ContextMenu>
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" CornerRadius="10" GlassFrameThickness="0" NonClientFrameEdges="None" ResizeBorderThickness="8"/>
