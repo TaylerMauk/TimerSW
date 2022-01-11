@@ -4,10 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\AppIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
