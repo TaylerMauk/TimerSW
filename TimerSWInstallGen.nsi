@@ -10,15 +10,25 @@
 !include "logiclib.nsh"
 !include "x64.nsh"
 
-!define COMPANY "TMS"
-!define APP_NAME "TimerSW"
-!define APP_FILE "TimerSW.exe"
 !define REG_UNINSTALL_KEY "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANY} ${APP_NAME}"
-!define REG_INFO_KEY "SOFTWARE\${COMPANY}\${APP_NAME}"
+!define REG_INFO_KEY      "SOFTWARE\${COMPANY}\${APP_NAME}"
 
 Unicode True
 RequestExecutionLevel admin
 SetCompressor /FINAL /SOLID lzma
+
+; ------------------------------------------------------------
+; Custom information
+
+!define COMPANY "TMS"
+
+!define APP_NAME "TimerSW"
+!define APP_FILE "TimerSW.exe"
+
+!define DISPLAY_VERSION "2022.0"
+
+!define URL_INFO_ABOUT "https://github.com/TaylerMauk/TimerSW"
+; ------------------------------------------------------------
 
 ; ------------------------------------------------------------
 ; Installer file name
@@ -52,7 +62,7 @@ Section "Core Components (Required)"
     ${EndIf}
     SetShellVarContext all
     SetOutPath "$INSTDIR"
-    
+
     ; Extract files
     File /r /x *.nsi *.*
 
@@ -62,8 +72,10 @@ Section "Core Components (Required)"
     ; Write uninstall info into the registry
     WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "DisplayName" "${APP_NAME}"
     WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "DisplayIcon" "$INSTDIR\${APP_FILE}"
+    WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "DisplayVersion" "${DISPLAY_VERSION}"
     WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "Publisher" "${COMPANY}"
     WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "UninstallString" "$INSTDIR\uninstall.exe"
+    WriteRegStr HKLM "${REG_UNINSTALL_KEY}" "UrlInfoAbout" "${URL_INFO_ABOUT}"
     WriteRegDWORD HKLM "${REG_UNINSTALL_KEY}" "NoModify" 1
     WriteRegDWORD HKLM "${REG_UNINSTALL_KEY}" "NoRepair" 1
 
